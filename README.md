@@ -4,12 +4,13 @@
 | Column             | Type   | Options                       |
 | ------------------ | ------ | ----------------------------- |
 | nickname           | string | null: false                   |
-| email              | string | null: false
+| email              | string | null: false                   |
 | encrypted_password | string | null: false                   |
 | surname            | string | null: false                   |
 | firstname          | string | null: false                   |
 | surname_kana       | string | null: false                   |
 | firstname_kana     | string | null: false                   |
+| birthday           | date   | null: false                   |
 
 
 ### Association
@@ -27,12 +28,12 @@
 | status_id   | integer    | null: false                    |
 | payee_id    | integer    | null: false                    |
 | sender_id   | integer    | null: false                    |
-| day_id      | integer    | null: false                    |
-| user_id     | references | null: false, foreign_key: true |
+| period_id   | integer    | null: false                    |
+| user        | references | null: false, foreign_key: true |
 
 ### Association
 
-- belong_to :user
+- belongs_to :user
 - has_one :purchase
 
 
@@ -40,26 +41,25 @@
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| postal_code      | integer    | null: false                    |
+| postal_code      | string     | null: false                    |
 | municipality     | string     | null: false                    |
 | address          | string     | null: false                    |
 | building_name    | string     | null: true                     |
 | telephone_number | string     | null: false                    |
-| sender_id        | integer    | null: false                    |
-| purchase_id      | integer    | null: false, foreign_key: true |
+| purchase         | references | null: false, foreign_key: true |
 ### Association
 
-- belong_to :purchase
+- belongs_to :purchase
 
 ## purchase テーブル
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
-| user_id  | references | null: false, foreign_key: true |
-| item_id  | references | null: false, foreign_key: true | 
+| user     | references | null: false, foreign_key: true |
+| item     | references | null: false, foreign_key: true | 
 
 ### Association
 
-- belong_to :item
+- belongs_to :item
 - has_one :buyer
-- belong_to :user
+- belongs_to :user
