@@ -27,7 +27,7 @@
 | category_id    | integer    | null: false                    |
 | status_id      | integer    | null: false                    |
 | payee_id       | integer    | null: false                    |
-| prefectures_id | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
 | period_id      | integer    | null: false                    |
 | user           | references | null: false, foreign_key: true |
 
@@ -47,7 +47,7 @@
 | building_name    | string     | null: true                     |
 | telephone_number | string     | null: false                    |
 | purchase         | references | null: false, foreign_key: true |
-| prefectures_id   | integer    | null: false                    |
+| prefecture_id   | integer    | null: false                    |
 
 ### Association
 
