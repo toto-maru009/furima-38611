@@ -19,17 +19,17 @@
 
 ## items テーブル
 
-| Column      | Type       | Options                        |
-| ----------  | ---------- | ------------------------------ |
-| name        | string     | null: false                    |
-| price       | integer    | null: false                    |
-| explanation | text       | null: false                    | 
-| category_id | integer    | null: false                    |
-| status_id   | integer    | null: false                    |
-| payee_id    | integer    | null: false                    |
-| sender_id   | integer    | null: false                    |
-| period_id   | integer    | null: false                    |
-| user        | references | null: false, foreign_key: true |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| name           | string     | null: false                    |
+| price          | integer    | null: false                    |
+| explanation    | text       | null: false                    | 
+| category_id    | integer    | null: false                    |
+| status_id      | integer    | null: false                    |
+| payee_id       | integer    | null: false                    |
+| prefectures_id | integer    | null: false                    |
+| period_id      | integer    | null: false                    |
+| user           | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -47,6 +47,8 @@
 | building_name    | string     | null: true                     |
 | telephone_number | string     | null: false                    |
 | purchase         | references | null: false, foreign_key: true |
+| prefectures_id   | integer    | null: false                    |
+
 ### Association
 
 - belongs_to :purchase
