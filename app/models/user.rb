@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true
-  validates :surname, presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/.freeze }
-  validates :firstname, presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/.freeze }
+  validates :surname, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/.freeze }
+  validates :firstname, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/.freeze }
   validates :surname_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/.freeze, message: '全角カタカナが必須です'}
   validates :firstname_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/.freeze, message: '全角カタカナが必須です'}
   validates :birthday, presence: true
