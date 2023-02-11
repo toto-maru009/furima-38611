@@ -13,7 +13,7 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :explanation, presence: true
   validates :image, presence: true
-  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 99999999 , message: "半角数字で¥300~¥9,999,999の間のみ出品可能"},format: { with: /\A[0-9]+\z/.freeze }
+  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 99999999 , message: "半角数字で¥300~¥9,999,999の間のみ出品可能"},format: { with: /\A[0-9]+\z/.freeze }
   validates :category_id, numericality: { other_than: 1 , message: "can't be blank" }
   validates :status_id, numericality: { other_than: 1 , message: "can't be blank" }
   validates :payee_id, numericality: { other_than: 1 , message: "can't be blank" }
