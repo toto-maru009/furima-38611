@@ -27,7 +27,7 @@
 | category_id    | integer    | null: false                    |
 | status_id      | integer    | null: false                    |
 | payee_id       | integer    | null: false                    |
-| prefecture_id | integer    | null: false                    |
+| prefecture_id  | integer    | null: false                    |
 | period_id      | integer    | null: false                    |
 | user           | references | null: false, foreign_key: true |
 
