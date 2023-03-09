@@ -16,6 +16,6 @@ class PurchaseBuyer
     # 購入についての情報を変数purchaseに代入
     purchase = Purchase.create(user_id: user_id, item_id: item_id)
     #住所の保存
-    Buyer.create(postal_code: postal_code, :municipality municipality, :address address, :building_name building_name, :telephone_number telephone_number, :prefecture_id prefecture_id, purchase_id: purchase.id)
+    Buyer.create(postal_code: postal_code, municipality: municipality, address: address, building_name: building_name, telephone_number: telephone_number, prefecture_id: prefecture_id, purchase_id: purchase.id)
   end
 end
