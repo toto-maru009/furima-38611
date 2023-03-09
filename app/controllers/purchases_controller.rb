@@ -3,7 +3,7 @@ class PurchasesController < ApplicationController
   before_action :set_item, only: [:index, :create]
 
   def index
-    @purchase_buyer = PurchaseBuyer(purchase_params)
+    @purchase_buyer = PurchaseBuyer.new
   end
 
   def create
@@ -24,7 +24,7 @@ class PurchasesController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
-    redirect_to root_path if current_user.id == @item.user_id || @item.order.present?
+    redirect_to root_path if current_user.id == @item.user_id || @item.purchase.present?
   end
 
 end
