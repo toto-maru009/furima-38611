@@ -9,6 +9,7 @@ class PurchaseBuyer
     validates :municipality 
     validates :address
     validates :telephone_number, format: {with: /\A\d{10,11}\z/, message: "10桁以上11桁以内の半角数値のみ"  }
+    validates :token
   end
   validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank" }
 
