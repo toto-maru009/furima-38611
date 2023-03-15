@@ -2,12 +2,14 @@ const pay = () => {
   const payjp = Payjp(process.env.PAYJP_PUBLIC_KEY);
   const elements = payjp.elements();
   const numberElement = elements.create('cardNumber');
-  const expiryElement = elements.create('cardExpiry');
+  const expiryMonthElement = elements.create('cardExpiry');
+  const expiryYearElement = elements.create('cardExpiry');
   const cvcElement = elements.create('cardCvc');
 
-  numberElement.mount('#number-form');
-  expiryElement.mount('#expiry-form');
-  cvcElement.mount('#cvc-form');
+  numberElement.mount('#card-number');
+  expiryMonthElement.mount('#card-exp-month');
+  expiryYearElement.mount('#card-exp-year');
+  cvcElement.mount('#card-cvc');
 
   const submit = document.getElementById("button");
 
@@ -22,11 +24,11 @@ const pay = () => {
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
       }
       numberElement.clear();
-      expiryElement.clear();
+      expiryMonthElement.clear();
+      expiryYearElement.clear();
       cvcElement.clear();
       document.getElementById("charge-form").submit();
     });
-    console.log("送信時に発火")
   });
 };
 
