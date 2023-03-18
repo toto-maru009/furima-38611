@@ -8,8 +8,6 @@ FactoryBot.define do
     prefecture_id {Faker::Number.between(from: 2, to: 48)}
     token {Faker::Internet.password(min_length: 20, max_length: 30)}
 
-    association :user
-    association :item
     
   end
 end
