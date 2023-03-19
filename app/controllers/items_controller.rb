@@ -22,6 +22,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    if @item.purchase.nil?
+    else
+      redirect_to root_path
+    end
     unless current_user.id == @item.user_id
       redirect_to action: :index
      end
