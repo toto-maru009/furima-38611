@@ -1,5 +1,5 @@
 class PurchasesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user! #ログインの有無の確認
   before_action :set_item, only: [:index, :create]
 
   def index
